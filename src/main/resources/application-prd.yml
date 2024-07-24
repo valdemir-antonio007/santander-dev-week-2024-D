@@ -12,10 +12,11 @@ spring:
         transaction:
           jta:
             platform: true
-        ddl-auto: update
+        ddl-auto: create
         dialect: org.hibernate.dialect.PostgreSQLDialect
         temp:
           use_jdbc_metadata_defaults: false
+
 
 # spring.datasource.testWhileIdle=true
 # spring.jpa.defer-datasource-initialization=true
