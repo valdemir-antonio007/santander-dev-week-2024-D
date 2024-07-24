@@ -1,9 +1,12 @@
 package me.dio.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
+
 
 @Entity(name = "tb_bootcamp")
 public class Bootcamp {
@@ -14,8 +17,10 @@ public class Bootcamp {
     private LocalDate dataInicio;
     private LocalDate dataTermino;
     private int xp;
+
     @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<Course> concluidos;
+
     @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<Course> pendentes;
 

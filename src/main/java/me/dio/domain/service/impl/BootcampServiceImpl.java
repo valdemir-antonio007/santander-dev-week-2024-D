@@ -22,9 +22,10 @@ public class BootcampServiceImpl implements BootcampService {
 
     @Override
     public Bootcamp create(Bootcamp bootcamp) {
-        if(bootcampRepository.existsById(bootcamp.getId())){
+        if(bootcamp.getId() != null ){
             throw new IllegalArgumentException("Bootcamp already exists");
         }
+        bootcampRepository.save(bootcamp);
         return bootcamp;
     }
 }
